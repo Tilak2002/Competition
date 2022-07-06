@@ -54,7 +54,7 @@
         </a>
       </li>
       <li>
-        <a href="purchase_record.php" class="nav-link text-white">
+        <a href="student_record.php" class="nav-link text-white">
           <svg class="bi pe-none me-2" width="6" height="16"><use xlink:href="#table"/></svg>
           Student Records
         </a>
