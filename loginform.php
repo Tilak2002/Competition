@@ -15,115 +15,13 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <link rel="stylesheet" href="css/login.css">
     <script>
+
         function newpage()
         {
             location.href="signupform.php";
         }
-        // function check()
-        // {
-        //     const usernameValue=frm.username.value.trim();
-        //     const passwordValue=frm.password.value.trim();    
-
-        //     if(usernameValue=="")
-        //     {
-        //         setErrorFor(username,"Username cannot be blank.");
-        //         frm.username.focus();
-        //         return false;
-        //     }
-        //     else if(checkUsername(usernameValue))
-        //     {
-        //         setErrorFor(username,"Special characters are not aloud in username.");
-        //         frm.username.focus();
-        //         return false;
-        //     }
-        //     else
-        //     {
-        //         setSuccessFor(username);
-        //     }
-
-        //     if(passwordValue=="")
-        //     {
-        //         setErrorFor(password,"Password cannot be blank.");
-        //         frm.password.focus();
-        //         return false;
-        //     }
-        //     else if(!checkPassword(passwordValue))
-        //     {
-        //         setErrorFor(password,"Password must contain atleast one small letter.");
-        //         frm.password.focus();
-        //         return false;
-        //     }
-        //     else if(!checkPassword1(passwordValue))
-        //     {
-        //         setErrorFor(password,"Password must contain atleast one capital letter.");
-        //         frm.password.focus();
-        //         return false;
-        //     }
-        //     else if(!checkPassword2(passwordValue))
-        //     {
-        //         setErrorFor(password,"Password must contain atleast one spacial character.");
-        //         frm.password.focus();
-        //         return false;
-        //     }
-        //     else if(!checkPassword3(passwordValue))
-        //     {
-        //         setErrorFor(password,"Password must contain atleast two digit.");
-        //         frm.password.focus();
-        //         return false;
-        //     }
-        //     else if(!checkPassword4(frm.password))
-        //     {
-        //         setErrorFor(password,"Password must contain atleast 8 character.");
-        //         frm.password.focus();
-        //         return false;
-        //     }
-        //     else
-        //     {
-        //         setSuccessFor(password);
-        //     }
-        // }
-        // function setErrorFor(input,message)
-        // {
-        //     const formControl=input.parentElement;
-        //     const small=formControl.querySelector("small");
-        //     small.innerText=message;
-        //     if(input==password)
-        //         formControl.className="form-control errorpassword";
-        //     else
-        //         formControl.className="form-control error";
-        // }
-        // function setSuccessFor(input,message)
-        // {
-        //     const formControl=input.parentElement;
-        //     formControl.className="form-control";
-        // }
-        // function checkUsername(username)
-        // {
-        //     return /\W/.test(username);
-        // }
-        // function checkPassword(password)
-        // {
-        //     return /[a-z]+/.test(password);
-        // }
-        // function checkPassword1(password)
-        // {
-        //     return /[A-Z]+/.test(password);
-        // }
-        // function checkPassword2(password)
-        // {
-        //     return /\W+/.test(password);
-        // }
-        // function checkPassword3(password)
-        // {
-        //     return /[0-9]{2}/.test(password);
-        // }
-        // function checkPassword4(password)
-        // {
-        //     if(password.value.length>=8)
-        //         return true;
-        //     return false;
-        // }
     </script>
+
 </head>
 <body>
     <section id="banner">
@@ -157,13 +55,40 @@
 
     
     <script>
+
         $('#login-btn').click(function(){
-    
+
             let email = $('#email').val();
             let pass = $('#password').val();
 
             console.log(email);
             console.log(pass);
+
+    var valid = check();
+
+        if(!valid){
+            return;
+        }
+
+        function check()
+        {
+            if(email==""){
+                frm.email.focus();
+                alert("Please fill the 'Email' field");
+                return false;
+            }
+            
+            if(pass==""){
+                frm.password.focus();
+                alert("Please fill the 'Password' field");
+                return false;
+            }
+
+            else{
+                return true;
+            }
+        }
+
             $.ajax(
         {
             method: "POST",
@@ -171,11 +96,10 @@
             
             data:
             {
-                
                 email: email,
                 pass: pass
-                
             }
+
         }).done(function(msg){
                 console.log(msg);
                             
