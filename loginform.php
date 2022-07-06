@@ -151,7 +151,7 @@
                     <i class="fa fa-exclamation-circle"></i>
                     <small>Error massege</small>
                 </div>
-                <button class="submit-btn" id="login-btn">Login</button>
+                <button type="button" class="submit-btn" id="login-btn">Login</button>
             </form>
         </div>
     </section>
@@ -177,17 +177,17 @@
                 pass: pass
                 
             }
-        })
-        .done(function(msg){
-                           
-           if(msg)
-           {
-             window.location.assign("http://localhost/Competition/signupform.php");   
-           }
-           else{
-            alert("data not true:");
-           }
-        });
+        }).done(function(msg){
+                console.log(msg);
+                            
+                if(msg=="true")
+                {
+                    window.location.assign("http://localhost/Competition/Dashboard.php");   
+                }
+                else{
+                    alert("Entered data is not true");
+                }
+            });
         });
 
     </script>

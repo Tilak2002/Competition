@@ -68,7 +68,7 @@ class DB{
                 }
             }
 
-      echo   $sel = "SELECT * from $tablename WHERE ".$where_query;
+        $sel = "SELECT * from $tablename WHERE ".$where_query;
         }
         
       $les = mysqli_query($con,$sel);
