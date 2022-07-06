@@ -26,11 +26,12 @@ class DB{
 
         $con = $this->dbConnect();
 
-       $insertquery = "insert into $tname (".implode(',',array_keys($insarray)).") values(".implode(',',array_values($insarray)).")";
+      echo $insertquery = "insert into $tname (".implode(',',array_keys($insarray)).") values(".implode(',',array_values($insarray)).")";
 
         $res = mysqli_query($con,$insertquery);
 
-        return $con->insert_id;
+        return $res;
+        // return $con->insert_id;
 
         // if($res){
         //     echo "Inserted Successfully\n";
@@ -67,10 +68,10 @@ class DB{
                 }
             }
 
-        $sel = "SELECT * from $tablename WHERE ".$where_query;
+      echo   $sel = "SELECT * from $tablename WHERE ".$where_query;
         }
         
-       $les = mysqli_query($con,$sel);
+      $les = mysqli_query($con,$sel);
         
        return $les;
 

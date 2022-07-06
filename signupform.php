@@ -10,116 +10,118 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <link rel="stylesheet" href="css/login.css">
     <script>
         function newpage()
         {
             location.href="loginform.php";
         }
-        function check()
-        {
-            const usernameValue=frm.username.value.trim();
-            const passwordValue=frm.password.value.trim();    
+        // function check()
+        // {
+        //     const usernameValue=frm.username.value.trim();
+        //     const passwordValue=frm.password.value.trim();    
 
-            if(usernameValue=="")
-            {
-                setErrorFor(username,"Username cannot be blank.");
-                frm.username.focus();
-                return false;
-            }
-            else if(checkUsername(usernameValue))
-            {
-                setErrorFor(username,"Special characters are not aloud in username.");
-                frm.username.focus();
-                return false;
-            }
-            else
-            {
-                setSuccessFor(username);
-            }
+        //     if(usernameValue=="")
+        //     {
+        //         setErrorFor(username,"Username cannot be blank.");
+        //         frm.username.focus();
+        //         return false;
+        //     }
+        //     else if(checkUsername(usernameValue))
+        //     {
+        //         setErrorFor(username,"Special characters are not aloud in username.");
+        //         frm.username.focus();
+        //         return false;
+        //     }
+        //     else
+        //     {
+        //         setSuccessFor(username);
+        //     }
 
-            if(passwordValue=="")
-            {
-                setErrorFor(password,"Password cannot be blank.");
-                frm.password.focus();
-                return false;
-            }
-            else if(!checkPassword(passwordValue))
-            {
-                setErrorFor(password,"Password must contain atleast one small letter.");
-                frm.password.focus();
-                return false;
-            }
-            else if(!checkPassword1(passwordValue))
-            {
-                setErrorFor(password,"Password must contain atleast one capital letter.");
-                frm.password.focus();
-                return false;
-            }
-            else if(!checkPassword2(passwordValue))
-            {
-                setErrorFor(password,"Password must contain atleast one spacial character.");
-                frm.password.focus();
-                return false;
-            }
-            else if(!checkPassword3(passwordValue))
-            {
-                setErrorFor(password,"Password must contain atleast two digit.");
-                frm.password.focus();
-                return false;
-            }
-            else if(!checkPassword4(frm.password))
-            {
-                setErrorFor(password,"Password must contain atleast 8 character.");
-                frm.password.focus();
-                return false;
-            }
-            else
-            {
-                setSuccessFor(password);
-            }
-        }
-        function setErrorFor(input,message)
-        {
-            const formControl=input.parentElement;
-            const small=formControl.querySelector("small");
-            small.innerText=message;
-            if(input==password)
-                formControl.className="form-control errorpassword";
-            else
-                formControl.className="form-control error";
-        }
-        function setSuccessFor(input,message)
-        {
-            const formControl=input.parentElement;
-            formControl.className="form-control";
-        }
-        function checkUsername(username)
-        {
-            return /\W/.test(username);
-        }
-        function checkPassword(password)
-        {
-            return /[a-z]+/.test(password);
-        }
-        function checkPassword1(password)
-        {
-            return /[A-Z]+/.test(password);
-        }
-        function checkPassword2(password)
-        {
-            return /\W+/.test(password);
-        }
-        function checkPassword3(password)
-        {
-            return /[0-9]{2}/.test(password);
-        }
-        function checkPassword4(password)
-        {
-            if(password.value.length>=8)
-                return true;
-            return false;
-        }
+        //     if(passwordValue=="")
+        //     {
+        //         setErrorFor(password,"Password cannot be blank.");
+        //         frm.password.focus();
+        //         return false;
+        //     }
+        //     else if(!checkPassword(passwordValue))
+        //     {
+        //         setErrorFor(password,"Password must contain atleast one small letter.");
+        //         frm.password.focus();
+        //         return false;
+        //     }
+        //     else if(!checkPassword1(passwordValue))
+        //     {
+        //         setErrorFor(password,"Password must contain atleast one capital letter.");
+        //         frm.password.focus();
+        //         return false;
+        //     }
+        //     else if(!checkPassword2(passwordValue))
+        //     {
+        //         setErrorFor(password,"Password must contain atleast one spacial character.");
+        //         frm.password.focus();
+        //         return false;
+        //     }
+        //     else if(!checkPassword3(passwordValue))
+        //     {
+        //         setErrorFor(password,"Password must contain atleast two digit.");
+        //         frm.password.focus();
+        //         return false;
+        //     }
+        //     else if(!checkPassword4(frm.password))
+        //     {
+        //         setErrorFor(password,"Password must contain atleast 8 character.");
+        //         frm.password.focus();
+        //         return false;
+        //     }
+        //     else
+        //     {
+        //         setSuccessFor(password);
+        //     }
+        // }
+        // function setErrorFor(input,message)
+        // {
+        //     const formControl=input.parentElement;
+        //     const small=formControl.querySelector("small");
+        //     small.innerText=message;
+        //     if(input==password)
+        //         formControl.className="form-control errorpassword";
+        //     else
+        //         formControl.className="form-control error";
+        // }
+        // function setSuccessFor(input,message)
+        // {
+        //     const formControl=input.parentElement;
+        //     formControl.className="form-control";
+        // }
+        // function checkUsername(username)
+        // {
+        //     return /\W/.test(username);
+        // }
+        // function checkPassword(password)
+        // {
+        //     return /[a-z]+/.test(password);
+        // }
+        // function checkPassword1(password)
+        // {
+        //     return /[A-Z]+/.test(password);
+        // }
+        // function checkPassword2(password)
+        // {
+        //     return /\W+/.test(password);
+        // }
+        // function checkPassword3(password)
+        // {
+        //     return /[0-9]{2}/.test(password);
+        // }
+        // function checkPassword4(password)
+        // {
+        //     if(password.value.length>=8)
+        //         return true;
+        //     return false;
+        // }
     </script>
 </head>
 <body>
@@ -127,14 +129,14 @@
         <div id="form-box">
             <div class="button-box">
                 <div id="btn1"></div>
-                <button type="button" class="buttons" onclick="newpage()">Login</button>
+                <button type="button" class="buttons" id="login"onclick="newpage()">Login</button>
                 <button type="button" class="buttons">Sign Up</button>
             </div><br><br>
             <!-- <div class="social">
                 <div class="go"><i class="fab fa-google"></i>  Google</div>
                 <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
             </div> -->
-            <form class="form" id="form" name="frm" onsubmit="return check()">
+            <form class="form" id="form" name="frm">
                 <div class="form-control">
                     <label for="username">Username</label>
                     <input type="text" name="username" id="username" placeholder="Name">
@@ -161,14 +163,160 @@
                 </div>
                 <div class="form-control">
                     <label for="password">Confirm Password</label>
-                    <input type="password" name="password" id="password" placeholder="Password">
+                    <input type="password" name="password" id="cpassword" placeholder="Password">
                     <i class="fa fa-exclamation-circle"></i>
                     <small>Error massege</small>
                 </div>
-                <input class="submit-btn" id="login-btn" type="submit" value="Sign Up">
+                <button class="submit-btn" id="login-btn"> Sign Up</button>
+                <!-- <input class="submit-btn" id="login-btn" type="submit" value="Sign Up"> -->
             </form>
         </div>
     </section>
+
+    <script>
+
+        $('#login-btn').click(function(){
+
+            let uname = $('#username').val();
+            let email = $('#email').val();
+            let mobile = $('#contactno').val();
+            let pass = $('#password').val();
+            let cpass = $('#cpassword').val();
+
+        //     var valid = check();
+        //     if(!valid){
+        //         return;
+        //     }
+
+        //     function check()
+        // {
+        //     const usernameValue=frm.username.value.trim();
+        //     const passwordValue=frm.password.value.trim();    
+
+        //     if(usernameValue=="")
+        //     {
+        //         setErrorFor(username,"Username cannot be blank.");
+        //         frm.username.focus();
+        //         return false;
+        //     }
+        //     else if(checkUsername(usernameValue))
+        //     {
+        //         setErrorFor(username,"Special characters are not aloud in username.");
+        //         frm.username.focus();
+        //         return false;
+        //     }
+        //     else
+        //     {
+        //         setSuccessFor(username);
+        //     }
+
+        //     if(passwordValue=="")
+        //     {
+        //         setErrorFor(password,"Password cannot be blank.");
+        //         frm.password.focus();
+        //         return false;
+        //     }
+        //     else if(!checkPassword(passwordValue))
+        //     {
+        //         setErrorFor(password,"Password must contain atleast one small letter.");
+        //         frm.password.focus();
+        //         return false;
+        //     }
+        //     else if(!checkPassword1(passwordValue))
+        //     {
+        //         setErrorFor(password,"Password must contain atleast one capital letter.");
+        //         frm.password.focus();
+        //         return false;
+        //     }
+        //     else if(!checkPassword2(passwordValue))
+        //     {
+        //         setErrorFor(password,"Password must contain atleast one spacial character.");
+        //         frm.password.focus();
+        //         return false;
+        //     }
+        //     else if(!checkPassword3(passwordValue))
+        //     {
+        //         setErrorFor(password,"Password must contain atleast two digit.");
+        //         frm.password.focus();
+        //         return false;
+        //     }
+        //     else if(!checkPassword4(frm.password))
+        //     {
+        //         setErrorFor(password,"Password must contain atleast 8 character.");
+        //         frm.password.focus();
+        //         return false;
+        //     }
+        //     else
+        //     {
+        //         setSuccessFor(password);
+        //     }
+        // }
+        // function setErrorFor(input,message)
+        // {
+        //     const formControl=input.parentElement;
+        //     const small=formControl.querySelector("small");
+        //     small.innerText=message;
+        //     if(input==password)
+        //         formControl.className="form-control errorpassword";
+        //     else
+        //         formControl.className="form-control error";
+        // }
+        // function setSuccessFor(input,message)
+        // {
+        //     const formControl=input.parentElement;
+        //     formControl.className="form-control";
+        // }
+        // function checkUsername(username)
+        // {
+        //     return /\W/.test(username);
+        // }
+        // function checkPassword(password)
+        // {
+        //     return /[a-z]+/.test(password);
+        // }
+        // function checkPassword1(password)
+        // {
+        //     return /[A-Z]+/.test(password);
+        // }
+        // function checkPassword2(password)
+        // {
+        //     return /\W+/.test(password);
+        // }
+        // function checkPassword3(password)
+        // {
+        //     return /[0-9]{2}/.test(password);
+        // }
+        // function checkPassword4(password)
+        // {
+        //     if(password.value.length>=8)
+        //         return true;
+        //     return false;
+        // }
+
+            $.ajax(
+        {
+            method: "POST",
+            url:"http://localhost/Competition/insert_signup.php",
+            
+            data:
+            {
+                uname: uname,
+                email: email,
+                mobile: mobile,
+                pass: pass,
+                cpass: cpass
+                
+            }
+        })
+        .done(function(msg){         
+               alert('Data Inserted Succesfully');    
+        });
+
+
+
+        });
+
+    </script>
 </body>
 </html>
     
