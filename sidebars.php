@@ -48,7 +48,7 @@
     <ul class="nav nav-pills flex-column mb-auto" id="nav">
       
       <li>
-        <a href="customer_form.php" class="nav-link text-white">
+        <a href="registration.php" class="nav-link text-white">
           <svg class="bi pe-none me-2" width="6" height="16"><use xlink:href="#table"/></svg>
           Registration
         </a>

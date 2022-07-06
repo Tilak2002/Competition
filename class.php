@@ -26,7 +26,7 @@ class DB{
 
         $con = $this->dbConnect();
 
-      echo $insertquery = "insert into $tname (".implode(',',array_keys($insarray)).") values(".implode(',',array_values($insarray)).")";
+       $insertquery = "insert into $tname (".implode(',',array_keys($insarray)).") values(".implode(',',array_values($insarray)).")";
 
         $res = mysqli_query($con,$insertquery);
 
