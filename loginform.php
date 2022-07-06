@@ -111,6 +111,10 @@
                     alert("Entered data is not true");
                 }
             });
+
+            $('#email').val('');
+            $('#password').val('');
+
         });
 
     </script>
