@@ -2,14 +2,16 @@
 require 'session.php';
 
 include 'class.php';
-$obj= new DB();
-// $result = $obj -> dbConnect();
+$ob = new DB();
 
-$res=$obj->selectquery("record_details"); 
-// $mob="9876543210";
-$mob = $_SESSION['uname'];
-$arr=array('username'=>$mob);
-$res1=$obj->selectquery("c_details",$arr); 
+$res = $ob->selectquery("student");
+
+
+// $res=$obj->selectquery("record_details"); 
+// // $mob="9876543210";
+// $mob = $_SESSION['uname'];
+// $arr=array('username'=>$mob);
+// $res1=$obj->selectquery("c_details",$arr); 
 
 // $arr1=array('invoice_no'=>$inv)
 // $obj->deletequery("record_details",$arr1);
@@ -18,7 +20,7 @@ $res1=$obj->selectquery("c_details",$arr);
 
 <html>
 <head>
-    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     
     <title>Purchase Records</title>
 
@@ -70,35 +72,31 @@ $res1=$obj->selectquery("c_details",$arr);
         <table id="tab"class="table table-bordered table-hover table-success table-striped">
             <thead class="table-info">
                 <th class="serial">Serial No.</th>
-                <th>Order Customer Id</th>
-                <th>Delivery Customer Id</th>
-                <th>Invoice No.</th>
-                <th>Order Date</th>
-                <th>View</th>
-                <th>Print</th>
+                <th>Roll No.</th>
+                <th>Student Name</th>
+                <th>Marks</th>
+                <th>Acitivities</th>
                 <th>Delete</th>
             </thead>
             <tbody>
                <?php $i=1;
-                $row1=mysqli_fetch_assoc($res1);
-                $code=$row1['code'];
+                // $row1=mysqli_fetch_assoc($res1);
+                // $code=$row1['code'];
 
-                $var = 1;
+                
                  while($row=mysqli_fetch_assoc($res))
                 {?>
                     <tr  id="<?php echo 't_'.$row['invoice_no']?>">
                         <td><?php echo $i?></td>
-                        <td><?php echo $row['customer_id']?></td>
-                        <td><?php echo $row['dc_id']?></td>
-                        <td><?php echo $code.$row['invoice_no']?></td>
-                        <td><?php echo $row['order_date']?></td>
-                        <td><button  data-fancybox data-src="#content" id="btn" class="btn btn-info" value="<?php echo $row['invoice_no']?>">view</button></td>
-                      <td><button class="print-btn btn btn-info" value="<?php echo $row['invoice_no']?>">Print</button>
-
-                     
-                        <td><button class="del-btn btn btn-info" value="<?php echo $row['invoice_no']?>">Delete</button></td>
+                        <td><?php echo $row['rollno']?></td>
+                        <td><?php echo $row['name']?></td>
+                        <!-- <td><?php// echo $code.$row['invoice_no']?></td>
+                        <td><?php// echo $row['order_date']?></td> -->
+                        <td><button  data-fancybox data-src="#content" id="btn" class="btn btn-info" value="<?php echo $row['rollno']?>">view</button></td>
+                        <td><button  data-fancybox data-src="#content1" id="btn" class="btn btn btn-info" value="<?php echo $row['rollno']?>">View</button></td>
+                        <td><button class="del-btn btn btn-info" value="<?php echo $row['rollno']?>">Delete</button></td>
                     </tr><?php
-                    $var++;
+                    
                     $i++;
                 }?>
             </tbody>
@@ -112,12 +110,23 @@ $res1=$obj->selectquery("c_details",$arr);
             <table class="table table-bordered table-hover table-success table-striped" >
                 <thead class="table-info">
                     <th>Sr No.</th>
-                    <th>Invoice No.</th>
-                    <th>Item </th>
-                    <th>Quantity</th>
-                    <th>Final Price</th>
+                    <th>Pysics</th>
+                    <th>Chemistry </th>
+                    <th>Maths</th>
+                    <th>Biology</th>
+                    <!-- <th>Total</th> -->
                 </thead>
                 <tbody id="tb">
+                </tbody>
+            </table>
+    </div>
+    <div id="content1" style="display:none;">
+            <table class="table table-bordered table-hover table-success table-striped" >
+                <thead class="table-info">
+                    <th>Sr No.</th>
+                    <th>Activity</th>
+                </thead>
+                <tbody id="tb1">
                 </tbody>
             </table>
     </div>
@@ -128,27 +137,42 @@ $res1=$obj->selectquery("c_details",$arr);
             $('.btn').click(function(){
 
                 var value = $(this).val();
-                var code = "<?php echo $code ?>"
-                // console.log(value);
+                // var code = "<?php echo $code ?>"
+                console.log(value);
 
                 $.ajax({
                     method: "POST",
-                    url:"http://localhost/Invoice/view_purchase_record.php",
+                    url:"http://localhost/Competition/view_mark.php",
                     data:
                     {
-                        value: value ,
-                        code: code
+                        value: value 
+                        // code: code
                     }
 
                 }).done(function(msg){
+                    
 
                     $("#tb").html(msg);
+                    
 
                 });
-               
-                
-                
-                // console.log(val);
+
+                $.ajax({
+                    method: "POST",
+                    url:"http://localhost/Competition/view_activity.php",
+                    data:
+                    {
+                        value: value 
+                        // code: code
+                    }
+
+                }).done(function(msg){
+                    
+
+                    $("#tb1").html(msg);
+
+                });
+                  
             });
 
             
@@ -161,7 +185,7 @@ $res1=$obj->selectquery("c_details",$arr);
 
                 $.ajax({
                     method: "POST",
-                    url:"http://localhost/Invoice/delete_purchase_record.php",
+                    url:"http://localhost/Competition/delete_student_record.php",
                     
                     data:
                     {
@@ -169,18 +193,18 @@ $res1=$obj->selectquery("c_details",$arr);
                     }
                 }).done(function(response){
 
-                    // let var="<?php echo $var?>";
+                    // let var="<?php// echo $var?>";
                     alert("Data deleted successfully");
-                    $('#t_'+val).html("");
+                    $(val).html("");
                 });
             }
         });
 
-        $('.print-btn').click(function(){
+        // $('.print-btn').click(function(){
 
-            var print = $(this).val();
-            window.open("http://localhost/Invoice/table1.php?id="+print+"");
-        });
+        //     var print = $(this).val();
+        //     window.open("http://localhost/Invoice/table1.php?id="+print+"");
+        // });
 
 
     </script>
