@@ -33,7 +33,7 @@ include 'class.php';
             <div class="form">
           <form method="post" class="form1" name="frm">
 
-                    <table class="table table-bordered">
+                    <table class="table table-bordered" id="t1Div">
                         <tr>
                             <td>Student's Full Name :</td>
                             <td><input type="text" name="ocname" id="ocname" class="validateMe" data-title="Customer Name"></td>
@@ -56,7 +56,7 @@ include 'class.php';
     
                        <tr>
                             <td>Activity :</td>
-                            <td><input type="text" name="saddress" id="sadd"></textarea></td>
+                            <td><input type="text" name="activity" id="activity_1"></input></td>
                             <td ><button id="addRow" type="button" class="btn btn-info">+</button></td>
 
                         </tr>
@@ -84,13 +84,13 @@ include 'class.php';
             var html = '';
             let dropdownhtml="<?php echo $html ?>";
             html+= '<tr class="t3">';
-            html += '<td>Item:</td>';
-            html += '<td><select class="sel1" name="it" id="it_'+loopInc+'">'; 
+            html += '<td>Activity :</td>';
+            html += '<td><input type="text" name="activity" id="activity_'+loopInc+'">'; 
             // html += '<td><select name="it" id="it1">'; 
             html += dropdownhtml;
-            html += '</select></td>'; 
-            html += '<td>Weight (in kg) : </td>';            
-            html += '<td><input type="number" name="quantity" id="quantity_'+loopInc+'"></td>';
+            html += '</input></td>'; 
+            // html += '<td>Weight (in kg) : </td>';            
+            // html += '<td><input type="number" name="quantity" id="quantity_'+loopInc+'"></td>';
 
             html += '<td><button id="removeRow" type="button" class="btn btn-danger">-</button></td>';
 
@@ -98,7 +98,7 @@ include 'class.php';
 
 
             //$('#t1').after(html);
-            $('#t1Div').append(html);
+            $('#t1Div').after(html);
             loopInc++;
         });
 
