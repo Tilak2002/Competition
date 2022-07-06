@@ -6,11 +6,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="css/login.css">
     <script>
         function newpage()
         {
-            location.href="loginform.html";
+            location.href="loginform.php";
         }
         function check()
         {
@@ -125,17 +125,17 @@
                 <div id="btn1"></div>
                 <button type="button" class="buttons" onclick="newpage()">Login</button>
                 <button type="button" class="buttons">Sign Up</button>
-            </div>
-            <div class="social">
+            </div><br><br>
+            <!-- <div class="social">
                 <div class="go"><i class="fab fa-google"></i>  Google</div>
                 <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
-            </div>
+            </div> -->
             <form class="form" id="form" name="frm" onsubmit="return check()">
                 <div class="form-control">
-                    <label for="username">Name</label>
+                    <label for="username">Username</label>
                     <input type="text" name="username" id="username" placeholder="Name">
                     <i class="fa fa-exclamation-circle"></i>
-                    <small>Error massege</small>
+                    <small>Error message</small>
                 </div>
                 <div class="form-control">
                     <label for="email">Email</label>
@@ -149,26 +149,8 @@
                     <i class="fa fa-exclamation-circle"></i>
                     <small>Error massege</small>
                 </div>
-                <!-- <div class="form-control">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email" placeholder="Email">
-                    <i class="fa fa-exclamation-circle"></i>
-                    <small>Error massege</small>
-                </div>
                 <div class="form-control">
-                    <label for="contactno">Contact Number</label>
-                    <input type="tel" name="" id="contactno" placeholder="Contact Number">
-                    <i class="fa fa-exclamation-circle"></i>
-                    <small>Error massege</small>
-                </div>
-                <div class="form-control">
-                    <label for="username">Username</label>
-                    <input type="text" name="username" id="username" placeholder="Username">
-                    <i class="fa fa-exclamation-circle"></i>
-                    <small>Error massege</small>
-                </div> -->
-                <div class="form-control">
-                    <label for="password">Set Password</label>
+                    <label for="password">Password</label>
                     <input type="password" name="password" id="password" placeholder="Password">
                     <i class="fa fa-exclamation-circle"></i>
                     <small>Error massege</small>

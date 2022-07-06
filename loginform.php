@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="css/login.css">
     <script>
         function newpage()
         {
-            location.href="signupform.html";
+            location.href="signupform.php";
         }
         function check()
         {
@@ -126,11 +126,11 @@
                 <div id="btn"></div>
                 <button type="button" class="buttons">Login</button>
                 <button type="button" class="buttons" onclick="newpage()">Sign Up</button>
-            </div>
-            <div class="social">
+            </div><br><br><br><br>
+            <!-- <div class="social">
                 <div class="go"><i class="fab fa-google"></i>  Google</div>
                 <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
-            </div>
+            </div> -->
             <form class="form" id="form" name="frm" method="post" onsubmit="return check()" action="/name.php">
                 <div class="form-control">
                     <label for="username">Username</label>
