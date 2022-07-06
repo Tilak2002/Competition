@@ -86,7 +86,7 @@ $res = $ob->selectquery("student");
                 
                  while($row=mysqli_fetch_assoc($res))
                 {?>
-                    <tr  id="<?php echo 't_'.$row['invoice_no']?>">
+                    <tr  id="<?php echo $row['rollno']?>">
                         <td><?php echo $i?></td>
                         <td><?php echo $row['rollno']?></td>
                         <td><?php echo $row['name']?></td>
