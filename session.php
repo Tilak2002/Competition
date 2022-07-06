@@ -4,10 +4,10 @@ session_start();
 
 $time = 30*60;
 
-    if(!isset($_SESSION['uname']))
-    {
-    //    header("location:http://localhost/Competition/loginform.php");
-    }
+    // if(!isset($_SESSION['sesvar']))
+    // {
+    // //    header("location:http://localhost/Competition/loginform.php");
+    // }
     if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > $time)) {
         session_unset();
         session_destroy();
