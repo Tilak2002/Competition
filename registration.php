@@ -75,28 +75,20 @@ include 'class.php';
         </div>
     </main>
    
-    <script type="text/javascript">
+    <script>
         // add row
         var loopInc = 2;
         $html="";
         $("#addRow").click(function() {
             console.log("dropdownhtml");
             var html = '';
-            // let dropdownhtml="<?php //echo $html ?>";
+           
             html+= '<tr class="t3">';
             html += '<td>Activity :</td>';
             html += '<td><input type="text" name="activity" id="activity_'+loopInc+'">'; 
-            // html += '<td><select name="it" id="it1">'; 
-            // html += dropdownhtml;
             html += '</input></td>'; 
-            // html += '<td>Weight (in kg) : </td>';            
-            // html += '<td><input type="number" name="quantity" id="quantity_'+loopInc+'"></td>';
-
             html += '<td><button id="removeRow" type="button" class="btn btn-danger">-</button></td>';
-
             html+= '</tr>';
-
-
             //$('#t1').after(html);
             $('#t1Div').append(html);
             loopInc++;
@@ -107,10 +99,7 @@ include 'class.php';
             $(this).closest('.t3').remove();
             
         });
-
-        // 
-
-        
+      
 
         $('.submit-btn').click(function(){
 
