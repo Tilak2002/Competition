@@ -1,5 +1,4 @@
 <?php
-
     include 'class.php';
 ?>
 
@@ -182,7 +181,7 @@
                             
                 if(msg=="true")
                 {
-                    window.location.assign("http://localhost/Competition/Dashboard.php");   
+                    window.location.assign("http://localhost/Competition/registration.php");   
                 }
                 else{
                     alert("Entered data is not true");

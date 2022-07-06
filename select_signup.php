@@ -1,5 +1,5 @@
 <?php
-
+    require 'session.php';
     include 'class.php';
 
 $ob = new DB();
@@ -13,9 +13,10 @@ $res = $ob -> selectquery("registration",$arr);
 $check_user=mysqli_num_rows($res);
 
 if($check_user){
+    $_SESSION['tilak'] = $email;
     echo "true";
 }
-else{
+else{   
     echo "false";
 }
 ?>
