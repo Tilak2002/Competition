@@ -14,11 +14,6 @@ include 'class.php';
 
         <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 
-<<<<<<< HEAD
-        <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
-
-=======
->>>>>>> cd87a9a6ea5ce16ac2e4869ea7a79a98e605af38
     </head>
 
     <body>
@@ -113,202 +108,7 @@ include 'class.php';
             
         });
 
-<<<<<<< HEAD
         // 
-=======
-<<<<<<< HEAD
-        $(document).ready(function(){
-
-            $('#check').click(function(){
-
-                if($('#check').is(":checked")){
-                    $('#sadd').val($('#badd').val());
-                    $('#sstate').val($('#bstate').val()).change();
-                    // $('#sstate').html($('#bstate').html());
-                    $('#scode').val($('#bcode').val());
-                }
-
-                else{
-
-                    $('#sadd').val("");
-                    $('#sstate').val("");
-                    $('#scode').val("");
-
-                }
-
-            });
-            
-        });
-
-        // function validateForm() {
-        //     $('.validateMe').each(function() {
-        //         if( $(this).val() == "" ) {
-        //             alert("Please Insert "+$(this).data('title'));
-        //             $(this).focus();
-        //             return false;
-        //         }
-        //     })
-        //     return true;
-        // }
-
-        $('.submit-btn').click(function(){
-        let ocname=$('#ocname').val();
-
-        let gstin=$('#gstin').val();
-        let length = gstin.length;
-        console.log(length);
-
-        let mobno=$('#mobno').val();
-        let badd=$('#badd').val();
-        let bstate=$('#bstate').val();
-        let bcode=$('#bcode').val();
-        let sadd=$('#sadd').val();
-        let sstate=$('#sstate').val();
-        let scode=$('#scode').val();
-
-
-        var valid = check();
-        if(!valid){
-            return;
-        }
-
-        function check()
-        {
-            if(ocname==""){
-                frm.ocname.focus();
-                alert("Please fill the 'Order Customer Name' field");
-                return false;
-            }
-
-            else if(checkOCname(ocname))
-                {
-                    alert("Only characters are allowed in the 'Order Customer Name' field");
-                    frm.ocname.focus();
-                    return false;
-                }
-
-
-            if(gstin==""){
-                frm.gstin.focus();
-                alert("Please fill the 'GSTIN' field");
-                return false;
-            }
-
-            else if(length!=15){
-                    alert("Exactly 15 characters are allowed in the 'GSTIN' field");
-                    frm.gstin.focus();
-                    return false;
-                }
-
-
-             if(mobno==""){
-                 frm.mobno.focus();
-                 alert("Please fill the 'Mobile number' field");
-                 return false;
-            }
-
-            else if(!checkMobNo(mobno))
-                {
-                    alert("Only 10 digits (Starting from 6-9) are allowed in the 'Mobile number' field ");
-                    frm.mobno.focus();
-                    return false;
-                }
-
-             if(badd==""){
-                 frm.baddress.focus();
-                 alert("Please fill the 'Billing Address' field");
-                 return false;
-            }
-
-            else if(checkBAdd(badd))
-                {
-                    alert("Only characters and digits are allowed in the 'Billing Address' field");
-                    frm.baddress.focus();
-                    return false;
-                }
-
-             if(bcode==""){
-                 frm.bcode.focus();
-                 alert("Please fill the 'Pincode' field");
-                 return false;
-            }
-
-            else if(!checkBCode(bcode))
-                {
-                    alert("Only 6 digits are allowed in the 'Pincode' field");
-                    frm.bcode.focus();
-                    return false;
-                }
-
-             if(sadd==""){
-                 frm.saddress.focus();
-                 alert("Please fill the 'Shipping Address' field");
-                 return false;
-            }
-
-            else if(checkSAdd(sadd))
-                {
-                    alert("Only characters and digits are allowed in the 'Shipping Address' field");
-                    frm.saddress.focus();
-                    return false;
-                }
-
-                if(scode==""){
-                 frm.scode.focus();
-                 alert("Please fill the 'Pincode' field");
-                 return false;
-            }
-
-            else if(!checkSCode(scode))
-                {
-                    alert("Only 6 digits are allowed in the 'Pincode' field");
-                    frm.scode.focus();
-                    return false;
-                }
-
-            else{
-                return true;
-            }
-        }
-
-       
-        function checkOCname(ocname)
-            {
-                return /[\W\d]+/.test(ocname);
-            }
-
-        // function checkGSTIN(gstin)
-        //     {
-        //         return /[\W\D]{15}$/.test(gstin);
-        //     }
-
-        function checkMobNo(mobno)
-            {
-                return /^[6-9]{1}[\d]{9}$/.test(mobno);
-            }
-
-        function checkBAdd(badd)
-            {
-                return /^[\W\D]$/.test(badd);
-            }
-
-        function checkBCode(bcode)
-            {
-                return /^[\d]{6}$/.test(bcode);
-            }
-
-            function checkSAdd(sadd)
-            {
-                return /^[\W\D]$/.test(sadd);
-            }
-
-            function checkSCode(scode)
-            {
-                return /^[\d]{6}$/.test(scode);
-            }
-=======
-        
->>>>>>> ea5eb0779ab518b68bd9c792996f579bb8676ab9
 
         
 
@@ -479,38 +279,10 @@ include 'class.php';
         //     {
         //         return /^[\d]{6}$/.test(scode);
         //     }
->>>>>>> cd87a9a6ea5ce16ac2e4869ea7a79a98e605af38
 
 
             $.ajax({
                 method:"post",
-<<<<<<< HEAD
-                url:"http://localhost/Invoice/insert_cust_details.php",
-                data: {
-                    ocname  :ocname,
-                    gstin  :gstin,
-                    mobno   :mobno,
-                    badd    :badd,
-                    bstate  :bstate,
-                    bcode   :bcode,
-                    sadd    :sadd,
-                    sstate  :sstate,
-                    scode   :scode
-                }
-            }).done(function(msg){
-                alert(msg);
-            });
-        //     $('#ocname').val('');
-        //     $('#dcname').val('');
-        //     $('#mobno').val('');
-        //     $('#badd').val('');
-        //     $('#bstate').val('');
-        //     $('#bcode').val('');
-        //     $('#sadd').val('');
-        //     $('#sstate').val('');
-        //     $('#scode').val('');
-
-=======
                 url:"http://localhost/Competition/inst_registration.php",
                 data: {
                     stuname  :stuname,
@@ -525,7 +297,6 @@ include 'class.php';
                 alert("data inserted successfully");
             });
        
->>>>>>> cd87a9a6ea5ce16ac2e4869ea7a79a98e605af38
         $('.reset').click();
         
 
@@ -533,14 +304,7 @@ include 'class.php';
 
 
 
-<<<<<<< HEAD
-    $(document).ready(function(){
-        $('.select1').select2();
-        $('.select').select2();
-    });
-=======
    
->>>>>>> cd87a9a6ea5ce16ac2e4869ea7a79a98e605af38
     </script>
 
     </body>
