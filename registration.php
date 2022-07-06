@@ -14,8 +14,11 @@ include 'class.php';
 
         <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 
+<<<<<<< HEAD
         <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 
+=======
+>>>>>>> cd87a9a6ea5ce16ac2e4869ea7a79a98e605af38
     </head>
 
     <body>
@@ -110,6 +113,7 @@ include 'class.php';
             
         });
 
+<<<<<<< HEAD
         $(document).ready(function(){
 
             $('#check').click(function(){
@@ -299,10 +303,184 @@ include 'class.php';
             {
                 return /^[\d]{6}$/.test(scode);
             }
+=======
+        
+
+        
+
+        $('.submit-btn').click(function(){
+
+            let stuname=$('#ocname').val();
+            let phy=$('#phy').val();
+            let che=$('#che').val();
+            let maths=$('#mat').val();
+            let bio=$('#bio').val();
+
+
+            console.log(loopInc);
+             var activity = [];
+             
+             for(let i=1;i<loopInc;i++){
+                 activity[i-1]=$("#activity_"+i).val();
+                 console.log(activity[i-1]);
+                //  qua[i-1]=$('#quantity_'+i).val();
+                 
+                }
+            // let sadd=$('#sadd').val();
+            // let sstate=$('#sstate').val();
+            // let scode=$('#scode').val();
+
+            // let gstin=$('#gstin').val();
+            // let length = gstin.length;
+            // console.log(length);
+
+
+
+        // var valid = check();
+        // if(!valid){
+        //     return;
+        // }
+
+        // function check()
+        // {
+        //     if(ocname==""){
+        //         frm.ocname.focus();
+        //         alert("Please fill the 'Order Customer Name' field");
+        //         return false;
+        //     }
+
+        //     else if(checkOCname(ocname))
+        //         {
+        //             alert("Only characters are allowed in the 'Order Customer Name' field");
+        //             frm.ocname.focus();
+        //             return false;
+        //         }
+
+
+        //     if(gstin==""){
+        //         frm.gstin.focus();
+        //         alert("Please fill the 'GSTIN' field");
+        //         return false;
+        //     }
+
+        //     else if(length!=15){
+        //             alert("Exactly 15 characters are allowed in the 'GSTIN' field");
+        //             frm.gstin.focus();
+        //             return false;
+        //         }
+
+
+        //      if(mobno==""){
+        //          frm.mobno.focus();
+        //          alert("Please fill the 'Mobile number' field");
+        //          return false;
+        //     }
+
+        //     else if(!checkMobNo(mobno))
+        //         {
+        //             alert("Only 10 digits (Starting from 6-9) are allowed in the 'Mobile number' field ");
+        //             frm.mobno.focus();
+        //             return false;
+        //         }
+
+        //      if(badd==""){
+        //          frm.baddress.focus();
+        //          alert("Please fill the 'Billing Address' field");
+        //          return false;
+        //     }
+
+        //     else if(checkBAdd(badd))
+        //         {
+        //             alert("Only characters and digits are allowed in the 'Billing Address' field");
+        //             frm.baddress.focus();
+        //             return false;
+        //         }
+
+        //      if(bcode==""){
+        //          frm.bcode.focus();
+        //          alert("Please fill the 'Pincode' field");
+        //          return false;
+        //     }
+
+        //     else if(!checkBCode(bcode))
+        //         {
+        //             alert("Only 6 digits are allowed in the 'Pincode' field");
+        //             frm.bcode.focus();
+        //             return false;
+        //         }
+
+        //      if(sadd==""){
+        //          frm.saddress.focus();
+        //          alert("Please fill the 'Shipping Address' field");
+        //          return false;
+        //     }
+
+        //     else if(checkSAdd(sadd))
+        //         {
+        //             alert("Only characters and digits are allowed in the 'Shipping Address' field");
+        //             frm.saddress.focus();
+        //             return false;
+        //         }
+
+        //         if(scode==""){
+        //          frm.scode.focus();
+        //          alert("Please fill the 'Pincode' field");
+        //          return false;
+        //     }
+
+        //     else if(!checkSCode(scode))
+        //         {
+        //             alert("Only 6 digits are allowed in the 'Pincode' field");
+        //             frm.scode.focus();
+        //             return false;
+        //         }
+
+        //     else{
+        //         return true;
+        //     }
+        // }
+
+       
+        // function checkOCname(ocname)
+        //     {
+        //         return /[\W\d]+/.test(ocname);
+        //     }
+
+        // // function checkGSTIN(gstin)
+        // //     {
+        // //         return /[\W\D]{15}$/.test(gstin);
+        // //     }
+
+        // function checkMobNo(mobno)
+        //     {
+        //         return /^[6-9]{1}[\d]{9}$/.test(mobno);
+        //     }
+
+        // function checkBAdd(badd)
+        //     {
+        //         return /^[\W\D]$/.test(badd);
+        //     }
+
+        // function checkBCode(bcode)
+        //     {
+        //         return /^[\d]{6}$/.test(bcode);
+        //     }
+
+        //     function checkSAdd(sadd)
+        //     {
+        //         return /^[\W\D]$/.test(sadd);
+        //     }
+
+        //     function checkSCode(scode)
+        //     {
+        //         return /^[\d]{6}$/.test(scode);
+        //     }
+>>>>>>> cd87a9a6ea5ce16ac2e4869ea7a79a98e605af38
 
 
             $.ajax({
                 method:"post",
+<<<<<<< HEAD
                 url:"http://localhost/Invoice/insert_cust_details.php",
                 data: {
                     ocname  :ocname,
@@ -328,6 +506,22 @@ include 'class.php';
         //     $('#sstate').val('');
         //     $('#scode').val('');
 
+=======
+                url:"http://localhost/Competition/inst_registration.php",
+                data: {
+                    stuname  :stuname,
+                    phy  :phy,
+                    che   :che,
+                    mat    :mat,
+                    bio  :bio,
+                    activity: activity
+                    
+                }
+            }).done(function(msg){
+                alert("data inserted successfully");
+            });
+       
+>>>>>>> cd87a9a6ea5ce16ac2e4869ea7a79a98e605af38
         $('.reset').click();
         
 
@@ -335,10 +529,14 @@ include 'class.php';
 
 
 
+<<<<<<< HEAD
     $(document).ready(function(){
         $('.select1').select2();
         $('.select').select2();
     });
+=======
+   
+>>>>>>> cd87a9a6ea5ce16ac2e4869ea7a79a98e605af38
     </script>
 
     </body>
