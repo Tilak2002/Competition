@@ -31,7 +31,7 @@ include 'class.php';
         <div class="container">
             <h3 id="h1">Student Details Form</h3>
             <div class="form">
-          <form method="post" class="form1" name="frm">
+          <form class="form1" name="frm">
 
                     <table class="table table-bordered" id="t1Div">
                         <tr>
@@ -60,8 +60,9 @@ include 'class.php';
                             <td ><button id="addRow" type="button" class="btn btn-info">+</button></td>
 
                         </tr>
-                       
+                    </table>
                      
+                    <table>
                         <tr>
                             <td id="res"><input type="reset" value="Reset" class="reset"></td>
                             <td id="sub" colspan="3">
@@ -79,15 +80,16 @@ include 'class.php';
     <script type="text/javascript">
         // add row
         var loopInc = 2;
+        $html="";
         $("#addRow").click(function() {
             console.log("dropdownhtml");
             var html = '';
-            let dropdownhtml="<?php echo $html ?>";
+            // let dropdownhtml="<?php //echo $html ?>";
             html+= '<tr class="t3">';
             html += '<td>Activity :</td>';
             html += '<td><input type="text" name="activity" id="activity_'+loopInc+'">'; 
             // html += '<td><select name="it" id="it1">'; 
-            html += dropdownhtml;
+            // html += dropdownhtml;
             html += '</input></td>'; 
             // html += '<td>Weight (in kg) : </td>';            
             // html += '<td><input type="number" name="quantity" id="quantity_'+loopInc+'"></td>';
@@ -98,7 +100,7 @@ include 'class.php';
 
 
             //$('#t1').after(html);
-            $('#t1Div').after(html);
+            $('#t1Div').append(html);
             loopInc++;
         });
 
