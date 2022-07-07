@@ -109,6 +109,15 @@ include 'class.php';
             let maths=$('#mat').val();
             let bio=$('#bio').val();
 
+            console.log(loopInc);
+             var activity = [];
+             
+             for(let i=1;i<loopInc;i++){
+                 activity[i-1]=$("#activity_"+i).val();
+                 console.log(activity[i-1]);
+                //  qua[i-1]=$('#quantity_'+i).val();
+                 
+                }
 
     var valid = check();
 
@@ -137,15 +146,69 @@ include 'class.php';
                 return false;
             }
 
+            else if(checkDigit(phy)){
+                frm.phy.focus();
+                alert("Characters or Special Characters are not allowed in the 'Physics(Marks)'");
+                return false;
+            }
+
+           else if(phy < 0 || phy > 100){
+                frm.phy.focus();
+                alert("The range of marks is between 0 to 100 in the 'Physics(Marks)' field");
+                return false;
+            }
+
             if(che==""){
                 frm.che.focus();
                 alert("Please fill the 'Chemistry(Marks)' field");
                 return false;
             }
 
-            if(maths && bio ==""){
+            else if(checkDigit(che)){
+                frm.che.focus();
+                alert("Characters or Special Characters are not allowed in the 'Physics(Marks)'");
+                return false;
+            }
+
+           else if(che < 0 || che > 100){
+                frm.che.focus();
+                alert("The range of marks is between 0 to 100 in the 'Chemistry(Marks)' field");
+                return false;
+            }
+
+            if(maths==""){
+                frm.mat.focus();
+                alert("Please fill the 'Maths(Marks)' field");
+                return false;
+            }
+
+            else if(checkDigit(maths)){
+                frm.mat.focus();
+                alert("Characters or Special Characters are not allowed in the 'Physics(Marks)'");
+                return false;
+            }
+
+           else if(maths < 0 || maths > 100){
+                frm.mat.focus();
+                alert("The range of marks is between 0 to 100 in the 'Maths(Marks)' field");
+                return false;
+            }
+
+            if(bio < 0 || bio > 100){
                 frm.bio.focus();
-                alert("Please fill both the 'Maths(Marks) and Biology(Marks)' field");
+                alert("The range of marks is between 0 to 100 in the 'Biology(Marks)' field");
+                return false;
+            }
+
+            else if(checkDigit(bio)){
+                frm.bio.focus();
+                alert("Characters or Special Characters are not allowed in the 'Physics(Marks)'");
+                return false;
+            }
+
+            if(activity==""){
+                frm.activity.focus();
+                alert("Please fill the 'Activity' field");
                 return false;
             }
 
@@ -159,16 +222,10 @@ include 'class.php';
                 return /[\W\d]+$/.test(stuname);
             }
 
-            console.log(loopInc);
-             var activity = [];
-             
-             for(let i=1;i<loopInc;i++){
-                 activity[i-1]=$("#activity_"+i).val();
-                 console.log(activity[i-1]);
-                //  qua[i-1]=$('#quantity_'+i).val();
-                 
-                }
-
+            function checkDigit(til)
+            {
+                return /[\D]+$/.test(til);
+            }
 
             $.ajax({
                 method:"post",
@@ -184,9 +241,10 @@ include 'class.php';
                 }
             }).done(function(msg){
                 alert("data inserted successfully");
+                $('.reset').click();
             });
        
-        $('.reset').click();
+        // $('.reset').click();
         
 
     });
