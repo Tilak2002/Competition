@@ -86,7 +86,7 @@ $res = $ob->selectquery("student");
                 
                  while($row=mysqli_fetch_assoc($res))
                 {?>
-                    <tr  id="<?php echo $row['rollno']?>">
+                    <tr  id="<?php echo 't_'.$row['rollno']?>">
                         <td><?php echo $i?></td>
                         <td><?php echo $row['rollno']?></td>
                         <td><?php echo $row['name']?></td>
@@ -110,7 +110,7 @@ $res = $ob->selectquery("student");
             <table class="table table-bordered table-hover table-success table-striped" >
                 <thead class="table-info">
                     <th>Sr No.</th>
-                    <th>Pysics</th>
+                    <th>Physics</th>
                     <th>Chemistry </th>
                     <th>Maths</th>
                     <th>Biology</th>
@@ -137,7 +137,7 @@ $res = $ob->selectquery("student");
             $('.btn').click(function(){
 
                 var value = $(this).val();
-                // var code = "<?php echo $code ?>"
+                // var code = "<?php //echo $code ?>"
                 console.log(value);
 
                 $.ajax({
@@ -195,7 +195,7 @@ $res = $ob->selectquery("student");
 
                     // let var="<?php// echo $var?>";
                     alert("Data deleted successfully");
-                    $(val).html("");
+                    $('#t_'+val).html("");
                 });
             }
         });
