@@ -2,7 +2,7 @@
 session_start();
 
 
-unset($_SESSION['sesvar']);
+unset($_SESSION['tilak']);
 
 // unset($_SESSION['USER_MOBILE']);
 // unset($_SESSION['user_email']);

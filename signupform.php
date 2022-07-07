@@ -17,7 +17,7 @@
        <script>
           function newpage()
         {
-            location.href="loginform.php";
+            location.href="index.php";
         }
        </script>
        

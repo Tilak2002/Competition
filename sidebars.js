@@ -16,7 +16,7 @@ $('#yes').click(function() {
 
     }).done(function() {
         // window.location.assign("http://localhost/Invoice/login.php");
-        window.location.assign("http://localhost/Competition/loginform.php");
+        window.location.assign("http://localhost/Competition/index.php");
 
     });
 });
