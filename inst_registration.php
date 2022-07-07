@@ -14,9 +14,8 @@ $ob = new DB();
 $arr = array('name'=>"'$stuname'");
 $res = $ob->insertQuery("student",$arr);
 
-
-$arr4 = array('name'=>"'$stuname'");
-$res4 = $ob->insertQuery("student",$arr);
+$arr4 = array('name'=>$stuname);
+$res4 = $ob->selectquery("student",$arr4);
 $row = mysqli_fetch_assoc($res4);
 
 $rollno = $row['rollno'];
@@ -25,7 +24,7 @@ $arr1 = array('rollno'=>"'$rollno'",'physics'=>"'$phy'",'chemistry'=>"'$che'",'m
 $res1 = $ob->insertQuery("marks",$arr1);
 
 for($i=0;$i<count($activity);$i++){
-    $arr2=array('activity'=>$activity[$i]);
+    // $arr2=array('activity'=>$activity[$i]);
    
     $arr3=array('rollno'=>"'$rollno'",'activity'=>"'$activity[$i]'");
     $ob->insertQuery("activity",$arr3);
