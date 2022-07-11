@@ -83,7 +83,7 @@ include 'sidebars.php';
      else if(npass == repass){
         $.ajax({
                     method: "post",
-                    url: "http://localhost/Competition/set_pass.php",
+                    url: "http://sql213.epizy.com/Competition/set_pass.php",
                     data:{
                         opassw:opass,
                         npassw:npass

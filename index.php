@@ -92,7 +92,7 @@
             $.ajax(
         {
             method: "POST",
-            url:"http://localhost/Competition/select_signup.php",
+            url:"http://sql213.epizy.com/Competition/select_signup.php",
             
             data:
             {
@@ -105,7 +105,7 @@
                             
                 if(msg=="true")
                 {
-                    window.location.assign("http://localhost/Competition/registration.php");   
+                    window.location.assign("http://sql213.epizy.com/Competition/registration.php");   
                 }
                 else{
                     alert("Entered data is not true");

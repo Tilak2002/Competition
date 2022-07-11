@@ -229,7 +229,7 @@ include 'class.php';
 
             $.ajax({
                 method:"post",
-                url:"http://localhost/Competition/inst_registration.php",
+                url:"http://sql213.epizy.com/Competition/inst_registration.php",
                 data: {
                     stuname :stuname,
                     phy:phy,

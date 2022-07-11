@@ -169,7 +169,7 @@
             $.ajax(
         {
             method: "POST",
-            url:"http://localhost/Competition/insert_signup.php",
+            url:"http://sql213.epizy.com/Competition/insert_signup.php",
             
             data:
             {

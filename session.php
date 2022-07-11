@@ -6,12 +6,12 @@ $time = 30*60;
 
     if(!isset($_SESSION['tilak']))
     {
-       header("location:http://localhost/Competition/index.php");
+       header("location:http://sql213.epizy.com/Competition/index.php");
     }
     if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > $time)) {
         session_unset();
         session_destroy();
-        header("location:http://localhost/Competition/index.php");
+        header("location:http://sql213.epizy.com/Competition/index.php");
         
     } 
     // echo "1. In If"."<br>";
@@ -20,5 +20,5 @@ $time = 30*60;
     // echo "Diff Time ".($time - $_SESSION['LAST_ACTIVITY'])."<br>";
     // session_unset();
     // session_destroy();
-    // header("location:http://localhost/invoice/index.php");
+    // header("location:http://sql213.epizy.com/invoice/index.php");
 ?>

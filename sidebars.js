@@ -12,11 +12,11 @@ $('#yes').click(function() {
 
     $.ajax({
         method: "post",
-        url: "http://localhost/Competition/sign_out.php",
+        url: "http://sql213.epizy.com/Competition/sign_out.php",
 
     }).done(function() {
-        // window.location.assign("http://localhost/Invoice/login.php");
-        window.location.assign("http://localhost/Competition/index.php");
+        // window.location.assign("http://sql213.epizy.com/Invoice/login.php");
+        window.location.assign("http://sql213.epizy.com/Competition/index.php");
 
     });
 });

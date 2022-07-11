@@ -142,7 +142,7 @@ $res = $ob->selectquery("student");
 
                 $.ajax({
                     method: "POST",
-                    url:"http://localhost/Competition/view_mark.php",
+                    url:"http://sql213.epizy.com/Competition/view_mark.php",
                     data:
                     {
                         value: value 
@@ -159,7 +159,7 @@ $res = $ob->selectquery("student");
 
                 $.ajax({
                     method: "POST",
-                    url:"http://localhost/Competition/view_activity.php",
+                    url:"http://sql213.epizy.com/Competition/view_activity.php",
                     data:
                     {
                         value: value 
@@ -185,7 +185,7 @@ $res = $ob->selectquery("student");
 
                 $.ajax({
                     method: "POST",
-                    url:"http://localhost/Competition/delete_student_record.php",
+                    url:"http://sql213.epizy.com/Competition/delete_student_record.php",
                     
                     data:
                     {
@@ -203,7 +203,7 @@ $res = $ob->selectquery("student");
         // $('.print-btn').click(function(){
 
         //     var print = $(this).val();
-        //     window.open("http://localhost/Invoice/table1.php?id="+print+"");
+        //     window.open("http://sql213.epizy.com/Invoice/table1.php?id="+print+"");
         // });
 
 

@@ -37,11 +37,11 @@
 
   <main class="d-flex flex-nowrap ">
 
-  <h1 class="visually-hidden">Sidebars examples</h1>
+  <!-- <h1 class="visually-hidden">Sidebars examples</h1> -->
 
   <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; height: 100vh;">
-    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-      <svg class="bi pe-none me-2" width="20" height="32"><use xlink:href="#bootstrap"/></svg>
+    <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+      <svg class="bi pe-none me-2" width="20" height="32"></svg>
       <span class="fs-5">Learning Management</span>
     </a>
     <hr>
@@ -95,7 +95,7 @@
 </div>
   
 
-    <script src="http://localhost/assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="http://sql213.epizy.com/assets/dist/js/bootstrap.bundle.min.js"></script>
 
       <script src="sidebars.js"></script>
       
