@@ -4,10 +4,10 @@ class DB{
     
     //Database Connection
     public function dbConnect() {
-        $username = "root";
-        $password = "";
-        $server = "localhost";
-        $database = "competition";
+        $username = "epiz_32118704";
+        $password = "I52BZ4yKESaDEAl";
+        $server = "sql213.epizy.com";
+        $database = "epiz_32118704_Competition";
         
         $con = mysqli_connect($server,$username,$password,$database);
         
